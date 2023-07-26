@@ -69,7 +69,7 @@ const App = () => {
   };
 
   const handleSearch = async (query) => {
-    if (!query) {
+    if (query == "") {
       fetchAllPosts();
       return;
     }

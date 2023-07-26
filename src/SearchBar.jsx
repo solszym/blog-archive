@@ -27,7 +27,7 @@ const SearchBar = ({ onSearch, isDarkMode }) => {
 
   const handleInputChange = (event) => {
     setQuery(event.target.value);
-    onSearch(query);
+    onSearch(query.toLowerCase());
   };
 
   return (

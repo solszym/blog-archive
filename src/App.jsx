@@ -68,7 +68,7 @@ const App = () => {
     }
   };
 
-  const handleEmptySearch = async (query) => {
+  const handleSearch = async (query) => {
     if (!query) {
       fetchAllPosts();
       return;
@@ -106,7 +106,7 @@ const App = () => {
             <SortButton onClick={handleSortByLength}>
               Sort by Title Length
             </SortButton>
-            <SearchBar onSearch={handleEmptySearch} isDarkMode={isDarkMode} />
+            <SearchBar onSearch={handleSearch} isDarkMode={isDarkMode} />
             <DarkModeButton onClick={handleThemeToggle}>
               {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             </DarkModeButton>

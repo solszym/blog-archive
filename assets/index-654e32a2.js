@@ -60,7 +60,7 @@ Error generating stack: `+i.message+`
     outline: none;
     color: ${e=>e.theme.placeholderColor};
   }
-`,e1=({onSearch:e,isDarkMode:t})=>{const[n,r]=tt.useState(""),o=i=>{r(i.target.value),e(n)};return b.jsx("div",{style:{width:"40%"},children:b.jsx(by,{type:"text",value:n,onChange:o,theme:t?Ru:Nu})})},t1=dn.li`
+`,e1=({onSearch:e,isDarkMode:t})=>{const[n,r]=tt.useState(""),o=i=>{r(i.target.value),e(n.toLowerCase())};return b.jsx("div",{style:{width:"40%"},children:b.jsx(by,{type:"text",value:n,onChange:o,theme:t?Ru:Nu})})},t1=dn.li`
   background-color: ${e=>e.theme.postColor};
   list-style-type: none;
   padding: 0 20px;
@@ -102,4 +102,4 @@ Error generating stack: `+i.message+`
   background-color: ${e=>e.theme.sortButtonColor};
   color: ${e=>e.theme.color};
   height: 80%;
-`,u1=()=>{const[e,t]=tt.useState([]),[n,r]=tt.useState(!1);tt.useEffect(()=>{o()},[]);const o=async()=>{try{const u=await Ya.get("https://jsonplaceholder.typicode.com/posts");t(u.data)}catch(u){console.error("Error fetching blog posts:",u)}},i=async u=>{if(!u){o();return}try{const p=(await Ya.get("https://jsonplaceholder.typicode.com/posts")).data.filter(h=>h.title.includes(u)||h.body.includes(u));t(p)}catch(a){console.error("Error fetching blog posts:",a)}},l=()=>{const u=[...e].sort((a,p)=>p.title.length-a.title.length);t(u)},s=()=>{r(u=>!u)};return b.jsx(Jy,{theme:n?Ru:Nu,children:b.jsx("div",{style:{minWidth:"100vw",minHeight:"100vh"},children:b.jsxs(o1,{children:[b.jsxs(i1,{children:[b.jsx(s1,{onClick:l,children:"Sort by Title Length"}),b.jsx(e1,{onSearch:i,isDarkMode:n}),b.jsx(l1,{onClick:s,children:n?"Switch to Light Mode":"Switch to Dark Mode"})]}),b.jsx(r1,{posts:e,isDarkMode:n})]})})})};wl.createRoot(document.getElementById("root")).render(b.jsx($t.StrictMode,{children:b.jsx(u1,{})}));
+`,u1=()=>{const[e,t]=tt.useState([]),[n,r]=tt.useState(!1);tt.useEffect(()=>{o()},[]);const o=async()=>{try{const u=await Ya.get("https://jsonplaceholder.typicode.com/posts");t(u.data)}catch(u){console.error("Error fetching blog posts:",u)}},i=async u=>{if(u==""){o();return}try{const p=(await Ya.get("https://jsonplaceholder.typicode.com/posts")).data.filter(h=>h.title.includes(u)||h.body.includes(u));t(p)}catch(a){console.error("Error fetching blog posts:",a)}},l=()=>{const u=[...e].sort((a,p)=>p.title.length-a.title.length);t(u)},s=()=>{r(u=>!u)};return b.jsx(Jy,{theme:n?Ru:Nu,children:b.jsx("div",{style:{minWidth:"100vw",minHeight:"100vh"},children:b.jsxs(o1,{children:[b.jsxs(i1,{children:[b.jsx(s1,{onClick:l,children:"Sort by Title Length"}),b.jsx(e1,{onSearch:i,isDarkMode:n}),b.jsx(l1,{onClick:s,children:n?"Switch to Light Mode":"Switch to Dark Mode"})]}),b.jsx(r1,{posts:e,isDarkMode:n})]})})})};wl.createRoot(document.getElementById("root")).render(b.jsx($t.StrictMode,{children:b.jsx(u1,{})}));

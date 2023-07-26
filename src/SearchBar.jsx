@@ -18,6 +18,7 @@ const SearchBox = styled.input`
   height: 80%;
   &:focus {
     outline: none;
+    filter: brightness(90%);
     color: ${(props) => props.theme.placeholderColor};
   }
 `;

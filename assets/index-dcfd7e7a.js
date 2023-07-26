@@ -58,6 +58,7 @@ Error generating stack: `+i.message+`
   height: 80%;
   &:focus {
     outline: none;
+    filter: brightness(90%);
     color: ${e=>e.theme.placeholderColor};
   }
 `,e1=({onSearch:e,isDarkMode:t})=>{const[n,r]=tt.useState(""),o=i=>{r(i.target.value),e(n.toLowerCase())};return b.jsx("div",{style:{width:"40%"},children:b.jsx(by,{type:"text",value:n,onChange:o,theme:t?Ru:Nu})})},t1=dn.li`
